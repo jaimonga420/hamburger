@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './widgets/header.dart';
+import './widgets/categories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.teal,
           appBarTheme: const AppBarTheme(centerTitle: true),
           bottomAppBarColor: Colors.teal,
-          floatingActionButtonTheme:
-              FloatingActionButtonThemeData(backgroundColor: Colors.orange),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: Colors.orange),
           textTheme: const TextTheme(
               headline6: TextStyle(color: Colors.white, fontSize: 18))),
       home: const Hamburger(),
@@ -39,6 +40,7 @@ class _HamburgerState extends State<Hamburger> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text('Hamburger App'),
         leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
         actions: <Widget>[
@@ -48,12 +50,13 @@ class _HamburgerState extends State<Hamburger> {
       body: CustomScrollView(
         slivers: [
           const Header(),
+          const Categories(),
           SliverList(
               delegate: SliverChildListDelegate([
-            const Text(
-              'Hamburger',
-              style: TextStyle(fontSize: 300),
-            )
+            // const Text(
+            //   'Hamburger',
+            //   style: TextStyle(fontSize: 300),
+            // )
           ]))
         ],
       ),
