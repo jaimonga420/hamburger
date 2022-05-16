@@ -72,30 +72,32 @@ class _HeaderState extends State<Header> {
                       style: Theme.of(context).textTheme.headline6,
                     )
                   ],
-                )
+                ),
               ],
             ),
           ),
         ],
       ),
-      Positioned(
-        child: SizedBox(
-          width: deviceSize.width,
-          child: Card(
-            margin: const EdgeInsets.symmetric(horizontal: 50),
-            elevation: 3,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  labelText: 'What does your belly want?',
-                  suffixIcon: Icon(Icons.search),
-                  contentPadding: EdgeInsets.only(left: 20)),
+      Stack(children: <Widget>[
+        Positioned(
+          child: SizedBox(
+            width: deviceSize.width,
+            child: Card(
+              margin: const EdgeInsets.symmetric(horizontal: 50),
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    labelText: 'What does your belly want?',
+                    suffixIcon: Icon(Icons.search),
+                    contentPadding: EdgeInsets.only(left: 20)),
+              ),
             ),
           ),
         ),
-      ),
+      ]),
     ]));
   }
 }

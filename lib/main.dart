@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.teal,
           primaryColor: Colors.teal,
           appBarTheme: const AppBarTheme(centerTitle: true),
+          bottomAppBarColor: Colors.teal,
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(backgroundColor: Colors.orange),
           textTheme: const TextTheme(
               headline6: TextStyle(color: Colors.white, fontSize: 18))),
       home: const Hamburger(),
@@ -45,8 +48,45 @@ class _HamburgerState extends State<Hamburger> {
       body: CustomScrollView(
         slivers: [
           const Header(),
-          SliverList(delegate: SliverChildListDelegate([]))
+          SliverList(
+              delegate: SliverChildListDelegate([
+            const Text(
+              'Hamburger',
+              style: TextStyle(fontSize: 300),
+            )
+          ]))
         ],
+      ),
+      extendBody: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.home),
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(35),
+        ),
+        child: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          child: Row(
+            children: <Widget>[
+              const Spacer(),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add_alert),
+                color: Colors.white,
+              ),
+              const Spacer(),
+              const Spacer(),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.turned_in),
+                  color: Colors.white),
+              const Spacer(),
+            ],
+          ),
+        ),
       ),
     );
   }
