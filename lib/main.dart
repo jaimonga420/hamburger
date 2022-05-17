@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './widgets/header.dart';
 import './widgets/categories.dart';
+import './widgets/hamburgers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,17 +48,11 @@ class _HamburgerState extends State<Hamburger> {
           IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
         ],
       ),
-      body: CustomScrollView(
+      body: const CustomScrollView(
         slivers: [
-          const Header(),
-          const Categories(),
-          SliverList(
-              delegate: SliverChildListDelegate([
-            // const Text(
-            //   'Hamburger',
-            //   style: TextStyle(fontSize: 300),
-            // )
-          ]))
+          Header(),
+          Categories(),
+          Hamburgers(),
         ],
       ),
       extendBody: true,

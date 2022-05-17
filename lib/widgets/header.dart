@@ -17,7 +17,7 @@ class _HeaderState extends State<Header> {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            height: deviceSize.height / 3.5,
+            height: deviceSize.height / 4,
             decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
                 borderRadius:
